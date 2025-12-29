@@ -11,9 +11,9 @@
     <h1>Sekai GN Calculator</h1>
     <h2>By doomertheboomer</h2>
     <a>Speed: </a>
-    <input class="speed" type="number">
+    <input class="speed" type="number" onchange="gncalculate()">
     <a>Lane Cover: </a>
-    <input class="lc" type="number">
+    <input class="lc" type="number" onchange="gncalculate()">
     <br><br>
     <button onclick="gncalculate()">Calculate Green Number</button>
     <br>
@@ -42,10 +42,6 @@
 
         document.getElementsByClassName("gnresult")[0].innerText = `Green Number: ${Math.floor(gn)}`
     }
-
-    document.addEventListener("keypress", function (event) {
-        gncalculate();
-    });
 </script>
 
 </html>
