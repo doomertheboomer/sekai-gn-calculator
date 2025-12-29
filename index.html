@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sekai GN Calculator</title>
 </head>
+
 <body>
     <h1>Sekai GN Calculator</h1>
     <h2>By doomertheboomer</h2>
@@ -21,7 +23,7 @@
 <script>
     function speedtogn(speed) {
         if (isNaN(speed)) { speed = 0; }
-        let retVal = (0.35 + 3.65 * ((12 - speed) / 11)**1.31) * 1000;
+        let retVal = (0.35 + 3.65 * ((12 - speed) / 11) ** 1.31) * 1000;
         if (isNaN(retVal)) {
             retVal = 3954.87146 * Math.sin(0.106289 * speed + 3.0265) + 3962.653;
         }
@@ -30,7 +32,7 @@
 
     function lctomult(lc) {
         if (isNaN(lc)) { lc = 0; }
-        return (2.63933e-8 * lc**4 - 0.0000069202 * lc**3 + 0.000672837 * lc**2 - 0.0344282 * lc + 1);
+        return (2.63933e-8 * lc ** 4 - 0.0000069202 * lc ** 3 + 0.000672837 * lc ** 2 - 0.0344282 * lc + 1);
     }
 
     function gncalculate() {
@@ -40,6 +42,10 @@
 
         document.getElementsByClassName("gnresult")[0].innerText = `Green Number: ${Math.floor(gn)}`
     }
+
+    document.addEventListener("keypress", function (event) {
+        gncalculate();
+    });
 </script>
 
 </html>
